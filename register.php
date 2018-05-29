@@ -14,15 +14,15 @@
 		<header id="main-header">
 			<div class="grid-header">
 				<div class="box1">
-					<h1 id="header-text"><a href="index.html"><span id="highlight-text">IT</span> Works</a></h1>
+					<h1 id="header-text"><a href="index.php"><span id="first-text">IT</span> <span id="second-text">Works</span></a></h1>
 				</div>
 				<div class="box2">
 					<nav class="main-nav">
 						<ul class="header-list">
-							<li><a href="index.html">HOME</a></li>
-							<li><a href="about.html" class="current">ABOUT</a></li>
-							<li><a href="services.html">SERVICES</a></li>
-							<li><a href="contact.html">CONTACT</a></li>
+							<li><a href="index.php">HOME</a></li>
+							<li><a href="about.php" class="current">ABOUT</a></li>
+							<li><a href="services.php">SERVICES</a></li>
+							<li><a href="contact.php">CONTACT</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -69,7 +69,7 @@
 	<!-- Footer -->
 		<footer class="main-footer">
 			<div class="container">
-				<p>Copyright &copy; IT Works | 2018</p>
+				<p>Copyright &copy; <span id="company">IT Works</span> | 2018</p>
 			</div>
 		</footer>
 	<!-- End of Container -->

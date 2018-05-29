@@ -1,3 +1,13 @@
+// Company Name
+var firstText="Company";
+var secondText="Name";
+
+var companyName= firstText+" "+secondText;
+document.getElementById("first-text").innerHTML = firstText;
+document.getElementById("second-text").innerHTML = secondText;
+document.getElementById("company").innerHTML = companyName;
+
+
 // Get modal element
 var modal = document.getElementById('simpleModal');
 // Get open modal button

@@ -6,13 +6,33 @@
 }
 
 :root{
-	--primary-color:#56a79a;
+
+	/*	Blue-Orangered	*/
+	/*--primary-color:#56a79a;
 	--secondary-color:#778899;
 	--contrast:	#FF4500;
 	--secondary-contrast:#926239;
 	--light-color:#fafafa;
 	--dark-color:#222;
-	--gray:#afafaf;
+	--gray:#999;*/
+
+	/* Magenta-Cyan */
+	--primary-color:#ff00ff;
+	--secondary-color:#ff69b4;
+	--contrast:	#00ffff;
+	--secondary-contrast:#ADD8E6;
+	--light-color:#fafafa;
+	--dark-color:#222;
+	--gray:#999;
+
+	/*	Magenta-Lime	*/
+	/*--primary-color:#ff00ff;
+	--secondary-color:#ff69b4s;
+	--contrast:	#32CD32;
+	--secondary-contrast:#98fb98;
+	--light-color:#fafafa;
+	--dark-color:#222;
+	--gray:#999;*/
 }
 
 body{
@@ -42,12 +62,11 @@ body{
 	grid-area:header;
 	border-bottom: 2px solid var(--secondary-color);
 	background: var(--dark-color);
-	color:var(--light-color);
+	color:var(--contrast);
 	height:80px;
 }
 
-
-#highlight-text{
+#highlight-text,#first-text{
 	color:var(--primary-color);
 }
 
@@ -103,7 +122,7 @@ body{
 .button{
 	background: var(--contrast);
 	padding: 2px 5px;
-	color:var(--light-color);
+	color:var(--dark-color);
 	border:0;
 	margin-right: 4px;
 	border-radius: 8px;
@@ -112,8 +131,8 @@ body{
 }
 
 .button:hover{
-	background:var(--light-color);
-	color:var(--contrast);
+	background:var(--primary-color);
+	color:var(--light-color);
 }
 
 /* Subheader*/
@@ -161,15 +180,15 @@ body{
 .showcase-content a{
 	font-size: 18px;
 	text-decoration:none;
-	color:var(--secondary-contrast);
-	border:var(--secondary-contrast) 1px solid;
+	color:var(--contrast);
+	border:var(--contrast) 1px solid;
 	padding:10px 20px;
 	border-radius: 10px;
 	margin-top:20px;
 }
 .showcase-content a:hover{
-	color:var(--light-color);
-	background:var(--secondary-contrast);
+	color:var(--primary-color);
+	border:var(--primary-color) 1px solid;
 }
 
 .search{
@@ -250,11 +269,10 @@ body{
 
 .modal-footer a{
 	color:var(--light-color);
-	text-decoration: none;
 }
 
 .modal-footer a:hover{
-	text-transform: uppercase;
+	font-weight: bold;
 }
 
 #closeBtn{
@@ -280,6 +298,7 @@ body{
 	display:grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-areas: "main sidebar";
+	padding:5px;
 }
 
 .content-body{
@@ -293,12 +312,13 @@ body{
 
 .sidebar{
 	grid-area:sidebar;
-	background: var(--gray);
+	background: var(--light-color);
+	border-left: 1px solid var(--dark-color);
 	padding:5px;
 }
 
 .sidebar h3{
-	color:var(--secondary-contrast);
+	color:var(--contrast);
 }
 
 .other-content{
@@ -307,7 +327,9 @@ body{
 
 .other-content h1{
 	color:var(--primary-color);
-	text-align: center;
+	float:left;
+	font-size: 25px;
+	border-bottom: 3px solid var(--contrast);
 }
 
 .content-box{
@@ -316,17 +338,61 @@ body{
 
 .content-box h2{
 	margin-bottom: 1rem;
+	padding-right: 100px;
+	text-align: center;
+}
+
+h2.next-h2{
+	padding-right: 0px;
 }
 
 .content-box p{
 	padding-left: 18px;
 }
+
+/* Forms */
+
+.form form{
+	width:50%;
+	background:#333;
+	color:#fff;
+	padding:20px;
+}
+
+.form form input[type="text"], .form form input[type="email"], .form form input[type="password"]{
+	width:80%;
+	height:30px;
+	margin-bottom:10px;
+}
+
+.form form textarea{
+	width:80%;
+	height:100px;
+}
+
+.form form button{
+	width:50%;
+	padding:10px 0;
+	border:0;
+	background:#222;
+	color:#fff;
+	cursor: pointer;
+}
+
+.contact form label{
+	text-transform: 
+}
+
+#admin-text{
+	padding-right: 200px;
+}
+
 /* Footer */
 .main-footer{
 	grid-area:footer;
 	border-top: 3px solid var(--secondary-color);
 	background: var(--dark-color);
-	color:var(--light-color);
+	color:var(--contrast);
 	text-align: center;
 	padding: 8px;
 }
@@ -342,7 +408,7 @@ body{
 	}
 }
 
-@media(max-width: 760px){
+@media(max-width: 800px){
 	.main-nav a.current{
 		margin-bottom:5px;
 	}
@@ -366,16 +432,30 @@ body{
 		height:auto;
 		padding: 5px;
 	}
-}
-
-
-@media(max-width: 568px){
 	.main-content-grid{
 		grid-template-columns: 1fr;
 		grid-template-areas: "main"
 		"sidebar";
 		align-items:center;
 	}
+
+	#admin-label{
+		float:none;
+		text-align: center;
+	}
+
+	#admin-text{
+		padding-right: 0px;
+		font-size: 22px;
+	}
+
+	.form form{
+		width:80%;
+	}
+}
+
+
+@media(max-width: 568px){
 	.grid-header{
 		grid-template-columns: 1fr;
 		grid-template-areas: 
@@ -395,5 +475,19 @@ body{
 
 	.showcase{
 		background-attachment: scroll;
+	}
+
+	.other-content h1{
+		float:none;
+		text-align: center;
+	}
+
+	.content-box h2{
+		padding-right: 0px;
+		font-size: 22px;
+	}
+
+	.form form{
+		width:100%;
 	}
 }

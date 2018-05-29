@@ -14,15 +14,15 @@
 		<header id="main-header">
 			<div class="grid-header">
 				<div class="box1">
-					<h1 id="header-text"><a href="index.html"><span id="highlight-text">IT</span> Works</a></h1>
+					<h1 id="header-text"><a href="index.php"><span id="first-text">IT</span> <span id="second-text">Works</span></a></h1>
 				</div>
 				<div class="box2">
 					<nav class="main-nav">
 						<ul class="header-list">
-							<li><a href="index.html">HOME</a></li>
-							<li><a href="about.html">ABOUT</a></li>
-							<li><a href="services.html">SERVICES</a></li>
-							<li><a href="contact.html" class="current">CONTACT</a></li>
+							<li><a href="index.php">HOME</a></li>
+							<li><a href="about.php">ABOUT</a></li>
+							<li><a href="services.php">SERVICES</a></li>
+							<li><a href="contact.php" class="current">CONTACT</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -50,7 +50,7 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<a href="register.html">Doesn't have an account?</a>
+					<a href="register.php">Doesn't have an account?</a>
 				</div>
 			</div>
 		</div>
@@ -66,10 +66,39 @@
 				</div>
 			</div>
 		</div>
+	<!-- Contact Form -->
+		<div class="other-content">
+			<h1>Contact Us</h1>
+			<div class="container">
+				<div class="content-box">
+					<h2><span id="highlight-text">Get</span> in Touch</h2>
+					<div class="form">
+						<center>
+							<form action="#" method="post">
+								<p>Please use this form to contact us</p>
+								<div>
+									<label for="name">Name</label><br>
+									<input type="text" name="contact-name">
+								</div>
+								<div>
+									<label for="email">Email</label><br>
+									<input type="email" name="contact-email">
+								</div>
+								<div>
+									<label for="message">Message</label><br>
+									<textarea name="message" name="contact-message"></textarea>
+								</div>
+								<button type="submit" name="contact-button">Submit</button>
+							</form>
+						</center>	
+					</div>
+				</div>
+			</div>
+		</div>
 	<!-- Footer -->
 		<footer class="main-footer">
 			<div class="container">
-				<p>Copyright &copy; IT Works | 2018</p>
+				<p>Copyright &copy; <span id="company">IT Works</span> | 2018</p>
 			</div>
 		</footer>
 	<!-- End of Container -->
