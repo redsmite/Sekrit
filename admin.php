@@ -6,14 +6,14 @@
  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
   	<link rel="stylesheet" href="css/fontawesome-all.css">
-	<title>Company Name - Admin Login</title>
+	<title></title>
 <body>
 	<div class="main-container">
 		<!-- Header -->
 		<header id="main-header">
 			<div class="grid-header">
 				<div class="box1">
-					<h1 id="header-text"><a href="index.php"><span id="first-text">IT</span> <span id="second-text">Works</span></a></h1>
+					<h1 id="header-text"><a href="index.php"><span id="first-text">IT</span> <span id="second-text"></span></a></h1>
 				</div>
 			</div>
 		</header>
@@ -44,7 +44,7 @@
 	<!-- Footer -->
 		<footer class="main-footer">
 			<div class="container">
-				<p>Copyright &copy; <span id="company">IT Works</span> | 2018</p>
+				<p>Copyright &copy; <span id="company"></span> | 2018</p>
 			</div>
 		</footer>
 	<!-- End of Container -->

@@ -1,3 +1,6 @@
+<?php
+	include'functions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,7 @@
  	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
   	<link rel="stylesheet" href="css/fontawesome-all.css">
-	<title>Company Name - About</title>
+	<title></title>
 </head>
 <body>
 	<div class="main-container">
@@ -14,7 +17,7 @@
 		<header id="main-header">
 			<div class="grid-header">
 				<div class="box1">
-					<h1 id="header-text"><a href="index.php"><span id="first-text">IT</span> <span id="second-text">Works</span></a></h1>
+					<h1 id="header-text"><a href="index.php"><span id="first-text"></span> <span id="second-text"></span></a></h1>
 				</div>
 				<div class="box2">
 					<nav class="main-nav">
@@ -39,12 +42,15 @@
 					<h5>Login Form</h5>
 				</div>
 				<div class="modal-body">
-					<form action="#" method="post">
+					<form action="functions.php" method="post">
 						<center><label for="">Username:</label>
-						<input type="text" name="username" placeholder="Enter Username...">
+						<input type="text" required name="username" placeholder="Enter Username...">
 						<br>
 						<label for="">Password:</label>
-						<input type="password" name="password" placeholder="Enter Password...">
+						<input type="password" required name="password" placeholder="Enter Password...">
+						<br>
+						<label for="">Remember Me?</label>
+						<input type="checkbox" name="remember">
 						<br>
 						<input type="submit" class="modal-button" value="Login"></center>
 					</form>
@@ -83,7 +89,7 @@
 	<!-- Footer -->
 		<footer class="main-footer">
 			<div class="container">
-				<p>Copyright &copy; <span id="company">IT Works</span> | 2018</p>
+				<p>Copyright &copy; <span id="company"></span> | 2018</p>
 			</div>
 		</footer>
 	<!-- End of Container -->

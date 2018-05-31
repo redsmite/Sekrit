@@ -14,25 +14,28 @@
 	--secondary-contrast:#926239;
 	--light-color:#fafafa;
 	--dark-color:#222;
-	--gray:#999;*/
+	--gray:#eee;
+	--darkgray:#888888;*/
 
-	/* Magenta-Cyan */
+	/* Magenta-Cyan*/ 
 	--primary-color:#ff00ff;
 	--secondary-color:#ff69b4;
 	--contrast:	#00ffff;
 	--secondary-contrast:#ADD8E6;
 	--light-color:#fafafa;
 	--dark-color:#222;
-	--gray:#999;
+	--gray:#eee;
+	--darkgray:#888888;
 
-	/*	Magenta-Lime	*/
+	/*	Magenta-Lime */	
 	/*--primary-color:#ff00ff;
-	--secondary-color:#ff69b4s;
+	--secondary-color:#ff69b4;
 	--contrast:	#32CD32;
 	--secondary-contrast:#98fb98;
 	--light-color:#fafafa;
 	--dark-color:#222;
-	--gray:#999;*/
+	--gray:#eee;
+	--darkgray:#888888;*/
 }
 
 body{
@@ -63,7 +66,7 @@ body{
 	border-bottom: 2px solid var(--secondary-color);
 	background: var(--dark-color);
 	color:var(--contrast);
-	height:80px;
+	min-height:80px;
 }
 
 #highlight-text,#first-text{
@@ -214,6 +217,8 @@ body{
 	width:100%;
 	overflow:auto;
 	background-color:rgba(0,0,0,0.5);
+	color:var(--dark-color);
+	font-weight: bold;
 }
 
 .modal-content{
@@ -242,18 +247,29 @@ body{
 
 .modal input[type='text'],.modal input[type='password']{
 	height: 20px;
-	border-radius:5px;
-	margin-top:3px;
+	margin: 10px;
+	width: 80%;
+}
+.modal input[type='checkbox']{
+	-ms-transform: scale(2); /* IE */
+	-moz-transform: scale(2); /* FF */
+	-webkit-transform: scale(2); /* Safari and Chrome */
+	-o-transform: scale(2); /* Opera */
+	margin-left: 20px;
+}
+
+.modal label{
+	font-size: 12px;
+	font-style: ;
 }
 
 .modal .modal-button{
-	background: var(--gray);
+	background: var(--contrast);
 	padding:1em 1em;
 	color:var(--light-color);
-	border:0;
 	margin-right: 4px;
 	border-radius: 8px;
-	margin-top: 2px;
+	margin-top: 5px;
 }
 
 .modal .modal-button:hover{
@@ -298,23 +314,27 @@ body{
 	display:grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-areas: "main sidebar";
-	padding:5px;
 }
 
 .content-body{
 	grid-area: main;
 	padding:5px;
+	padding:10px;
+	border-right: 1px solid var(--dark-color);
 }
 
 .content-body h2{
 	color:var(--primary-color);
+	border-bottom: 1px solid var(--contrast);
+	margin:2px;
 }
 
 .sidebar{
 	grid-area:sidebar;
-	background: var(--light-color);
-	border-left: 1px solid var(--dark-color);
-	padding:5px;
+	background: var(--gray);
+	padding:10px;
+	margin:5px;
+	box-shadow: 5px 10px var(--darkgray);
 }
 
 .sidebar h3{
@@ -323,6 +343,7 @@ body{
 
 .other-content{
 	padding:5px;
+	background: var(--gray);
 }
 
 .other-content h1{
@@ -351,15 +372,20 @@ h2.next-h2{
 }
 
 /* Forms */
-
-.form form{
-	width:50%;
-	background:#333;
-	color:#fff;
-	padding:20px;
+.form{
+	margin-left: auto;
+    margin-right: auto;
 }
 
-.form form input[type="text"], .form form input[type="email"], .form form input[type="password"]{
+.form form{
+	width:80%;
+	background:#333;
+	color:var(--primary-color);
+	padding:20px;
+	border-radius: 16px;
+}
+
+.form form input[type="text"],.form form input[type="number"], .form form input[type="email"], .form form input[type="password"],.form form input[type="date"]{
 	width:80%;
 	height:30px;
 	margin-bottom:10px;
@@ -387,6 +413,19 @@ h2.next-h2{
 	padding-right: 200px;
 }
 
+.grid-register{
+	display:grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "leftbox rightbox"
+}
+
+.box-reg1{
+	grid-area: leftbox;
+}
+
+.box-reg2{
+	grid-area: rightbox;
+}
 /* Footer */
 .main-footer{
 	grid-area:footer;
@@ -424,6 +463,9 @@ h2.next-h2{
 	.modal-content{
 		width:60%;
 	}
+	.modal input[type='text'],.modal input[type='password']{
+		width: 80%;
+	}
 
 	.main-nav ul li{
 		display:block;
@@ -452,6 +494,13 @@ h2.next-h2{
 	.form form{
 		width:80%;
 	}
+
+	.grid-register{
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		"leftbox"
+		"rightbox";
+	}
 }
 
 
@@ -468,6 +517,10 @@ h2.next-h2{
 	.modal-content{
 		width:80%;
 	}
+	.modal input[type='text'],.modal input[type='password']{
+		width: 100%;
+	}
+
 
 	.subheader{
 		height:50px;

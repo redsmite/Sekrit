@@ -1,0 +1,11 @@
+reg-name username
+reg-password password
+reg-retype
+reg-first firstname
+reg-middle middlename
+reg-last lastname
+reg-birthday birthday
+now()	datecreated
+reg-email email 
+reg-phone phoneno
+reg-address address
