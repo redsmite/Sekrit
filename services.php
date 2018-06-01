@@ -1,3 +1,6 @@
+<?php
+	include'sidebar.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,7 +62,16 @@
 		</div>
 	<!-- Sub Header -->
 		<div class="subheader">
-			<div class="container">
+			<div class="subgrid">
+				<div class="svg">
+					<p class="open-slide" onclick="openSlideMenu()">
+						<svg width="30" height="30">
+							<path d="M0,5 30,5" stroke="#fafafa" stroke-width="5"/>
+							<path d="M0,14 30,14" stroke="#fafafa" stroke-width="5"/>
+							<path d="M0,23 30,23" stroke="#fafafa" stroke-width="5"/>	
+						</svg>
+					</p>
+				</div>
 				<div class="search">
 					<form action="search.php">
 						<i class="fas fa-search"></i>

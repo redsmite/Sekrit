@@ -19,13 +19,28 @@ if(isset($_POST['username'])){
 	$address= mysqli_real_escape_string($conn,$_POST['address']);
 
 	if($password==$retype){
-		$sql="INSERT INTO tbluser(username,password,firstname,middlename,lastname,birthday,datecreated,email,phoneno,address) VALUES('$username','$password','$firstname','$middlename','$lastname','$birthday','$timestamp','$email','$phoneno','$address')";
+		$sql="SELECT username FROM tbluser WHERE username='$username'";
+		if($res_u=mysqli_query($conn,$sql)){
+			if (mysqli_num_rows($res_u) == 0) {
 
-		if(mysqli_query($conn,$sql)){
-			echo ' User added...';
+				$sql2="INSERT INTO tbluser(username,password,firstname,middlename,lastname,birthday,datecreated,email,phoneno,address,usertypeid) VALUES('$username','$password','$firstname','$middlename','$lastname','$birthday','$timestamp','$email','$phoneno','$address','1')";
+
+				if(mysqli_query($conn,$sql2)){
+					echo 'success';
+				} else {
+						echo 'Error: '+mysqli_error($conn);
+				}
+
+			}	else {
+				echo '<i class="fas fa-exclamation-triangle"></i>Username is not unique';
+			}
+
 		} else {
 				echo 'Error: '+mysqli_error($conn);
 		}
+
+	} else {
+		echo'<i class="fas fa-exclamation-triangle"></i>Password doesn\'t match';
 	}
 }
 ?>

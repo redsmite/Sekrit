@@ -1,5 +1,5 @@
 <?php
-	include'functions.php';
+	include'sidebar.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,16 @@
 		</div>
 	<!-- Sub Header -->
 		<div class="subheader">
-			<div class="container">
+			<div class="subgrid">
+				<div class="svg">
+					<p class="open-slide" onclick="openSlideMenu()">
+						<svg width="30" height="30">
+							<path d="M0,5 30,5" stroke="#fafafa" stroke-width="5"/>
+							<path d="M0,14 30,14" stroke="#fafafa" stroke-width="5"/>
+							<path d="M0,23 30,23" stroke="#fafafa" stroke-width="5"/>	
+						</svg>
+					</p>
+				</div>
 				<div class="search">
 					<form action="search.php">
 						<i class="fas fa-search"></i>
@@ -77,7 +86,7 @@
 			<h1>About Us</h1>
 			<div class="container">
 				<div class="content-box">
-					<h2><span id="highlight-text">Who</span> are these people?</h2>
+					<h2><span id="highlight-text">Who</span> are the people?</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, sunt aliquam ipsum officia molestiae cum amet natus totam. At soluta, molestiae dicta! Illum dicta temporibus nobis architecto assumenda, perferendis, aperiam hic excepturi suscipit, quaerat sit enim perspiciatis amet accusamus nam, eveniet labore dignissimos! Veritatis, consequuntur, dolorem! Velit magnam laboriosam in, veritatis labore? Voluptatum cupiditate saepe excepturi fugit officia nam, ipsum doloribus officiis omnis nihil eligendi vitae sit velit assumenda quas tempore commodi nesciunt quidem eos. Architecto ad, provident quo. Obcaecati molestiae similique repellendus voluptatem necessitatibus. Exercitationem dolorum, quam recusandae repellendus iste laudantium laboriosam autem. Corporis et sequi optio veniam deleniti totam, eaque ipsum tenetur voluptatem, id vel mollitia laudantium dolores, ut saepe. Quos, quo porro eum accusamus omnis. Nam facilis corporis est reiciendis accusamus cum officia repellat perferendis adipisci consequatur, iste voluptatibus, aspernatur fugiat eum alias aut iure ducimus earum ipsum ipsa esse velit eaque delectus laboriosam. Ducimus modi eos ut reprehenderit, consequatur consequuntur iusto. Consectetur laudantium accusantium vel porro voluptates, voluptatum voluptatibus eos excepturi aperiam tempora, possimus iure quos itaque tempore culpa illo unde a libero veniam ipsa dicta in esse. Ab ad temporibus cumque rerum natus voluptatum, sunt quod eligendi quam, magnam? Sed, quo! Esse a ab accusamus!</p>
 				</div>
 				<div class="content-box">

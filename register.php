@@ -1,3 +1,6 @@
+<?php
+	include'sidebar.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +23,7 @@
 					<nav class="main-nav">
 						<ul class="header-list">
 							<li><a href="index.php">HOME</a></li>
-							<li><a href="about.php" class="current">ABOUT</a></li>
+							<li><a href="about.php">ABOUT</a></li>
 							<li><a href="services.php">SERVICES</a></li>
 							<li><a href="contact.php">CONTACT</a></li>
 						</ul>
@@ -59,7 +62,16 @@
 		</div>
 	<!-- Sub Header -->
 		<div class="subheader">
-			<div class="container">
+			<div class="subgrid">
+				<div class="svg">
+					<p class="open-slide" onclick="openSlideMenu()">
+						<svg width="30" height="30">
+							<path d="M0,5 30,5" stroke="#fafafa" stroke-width="5"/>
+							<path d="M0,14 30,14" stroke="#fafafa" stroke-width="5"/>
+							<path d="M0,23 30,23" stroke="#fafafa" stroke-width="5"/>	
+						</svg>
+					</p>
+				</div>
 				<div class="search">
 					<form action="search.php">
 						<i class="fas fa-search"></i>
@@ -124,7 +136,8 @@
 										<br><br>
 										<button type="submit" name="contact-button" id="contact-button">Submit</button>
 									</div>
-								</div>								
+								</div>
+								<div id="error-message"></div>								
 							</div>	
 						</form>
 						</center>
@@ -169,7 +182,13 @@
 			myRequest.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
 			myRequest.onload = function(){
-				console.log(this.responseText);
+				var response= this.responseText;
+				
+				if(response=="success"){
+					window.location.href = 'thankyou.html';
+				} else {
+					document.getElementById('error-message').innerHTML=response;
+				}
 			}
 			myRequest.send(formData);
 		}

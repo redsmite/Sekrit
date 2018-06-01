@@ -7,6 +7,17 @@ function changeCompanyName(firstText,secondText){
 	document.title= companyName;
 }
 
+//sideMenu
+function openSlideMenu(){
+	document.getElementById('side-menu').style.width='90px';
+	document.getElementById('side-menu').marginleft='90px';
+}
+
+function closeSlideMenu(){
+	document.getElementById('side-menu').style.width='0';
+	document.getElementById('side-menu').marginleft='0';
+}
+
 // Create modal
 function modal(){
 	// Get modal element
