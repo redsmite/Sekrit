@@ -63,10 +63,10 @@ body{
 /* Subheader*/
 .subheader{
 	grid-area:subheader;
-	background: var(--light-color);
-	color:var(--dark-color);
-	border-bottom: 2px solid var(--darkgray);
-	height: auto;
+	background: var(--dark-color);
+	color:var(--light-color);
+	border-bottom:2px solid var(--contrast);
+	padding-bottom: 4px;
 }
 
 .subgrid{
@@ -83,7 +83,7 @@ body{
 .search{
 	grid-area: search;
 	grid-column-start: right;
-	padding-top: 5px;
+	padding: 5px;
 }
 
 .subheader p svg{
@@ -91,7 +91,7 @@ body{
 }
 
 .subheader p path{
-	stroke:var(--dark-color);
+	stroke:var(--light-color);
 }
 
 .subheader p:hover{
@@ -107,7 +107,7 @@ body{
 /* Header */
 #main-header{
 	grid-area:header;
-	border-bottom: 2px solid var(--darkgray);
+	border-bottom: 2px solid var(--primary-color);
 	background: var(--dark-color);
 	color:var(--contrast);
 }
@@ -229,7 +229,7 @@ body{
 .showcase{
 	grid-area:showcase;
 	background:url(../img/showcase.jpeg);
-	border-bottom: 3px solid var(--secondary-color);
+	border-bottom: 3px solid var(--contrast);
 	height: 420px;
 	position:relative;
 	opacity:0.90;
@@ -283,7 +283,6 @@ body{
 	top:0;
 	height:100%;
 	width:100%;
-	overflow:auto;
 	background-color:rgba(0,0,0,0.5);
 	color:var(--dark-color);
 	font-weight: bold;
@@ -291,7 +290,7 @@ body{
 
 .modal-content{
 	background-color:var(--light-color);
-	margin:20% auto;
+	margin:10% auto;
 	padding:0;
 	width:30%;
 	box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2); 
@@ -303,9 +302,10 @@ body{
 	background:var(--dark-color);
 	padding:15px;
 	color:var(--light-color);
+	border-bottom: 2px solid var(--contrast)
 }
 
-.modal-header h2, .modal-footer h3{
+.modal-header h2{
 	margin:0;
 }
 
@@ -342,17 +342,19 @@ body{
 }
 
 .modal .modal-button:hover{
-	background:var(--contrast);
+	background:var(--primary-color);
 }
 
 .modal-footer{
 	background:var(--darkgray);
 	padding:10px;
 	text-align:center;
+	border-top: 2px solid var(--primary-color);
 }
 
 .modal-footer a{
 	color:var(--light-color);
+	font-size: 14px;
 }
 
 .modal-footer a:hover{
@@ -366,7 +368,7 @@ body{
 }
 
 #closeBtn:hover,.closeBtn:focus{
-	color:#000;
+	color:var(--primary-color);
 	text-decoration: none;
 	cursor:pointer;
 }
@@ -389,24 +391,25 @@ body{
 	padding:5px;
 	padding:10px;
 	border-right: 1px solid var(--dark-color);
+	background: var(--gray);
 }
 
 .content-body h2{
 	color:var(--primary-color);
-	border-bottom: 1px solid var(--contrast);
+	border-bottom: 1px solid var(--darkgray);
 	margin:2px;
 }
 
 .sidebar{
 	grid-area:sidebar;
-	background: var(--gray);
+	background: var(--light-color);
 	padding:10px;
 	margin:5px;
 	box-shadow: 5px 10px var(--darkgray);
 }
 
 .sidebar h3{
-	color:var(--contrast);
+	color:var(--primary-color);
 }
 
 /* Content from other pages */
@@ -503,8 +506,17 @@ h2.next-h2{
 	grid-area: error;
 	width:100%;
 	padding:0;
-	margin:0;
+	margin-top:4px;
 	background:#ff4040;
+	color:var(--light-color);
+}
+
+#process-message{
+	grid-area: error;
+	width:100%;
+	padding:0;
+	margin-top:4px;
+	background:#008000;
 	color:var(--light-color);
 }
 
@@ -527,7 +539,7 @@ h2.next-h2{
 /* Footer */
 .main-footer{
 	grid-area:footer;
-	border-top: 3px solid var(--darkgray);
+	border-top: 3px solid var(--primary-color);
 	background: var(--dark-color);
 	color:var(--contrast);
 	text-align: center;
@@ -611,6 +623,7 @@ h2.next-h2{
 	.subgrid{
 		display: block;
 	}
+
 	.modal-content{
 		width:80%;
 	}

@@ -1,5 +1,7 @@
 <?php
-	include'sidebar.php';
+	include'functions.php';
+	addSidebar();
+	addLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,32 +36,6 @@
 				</div>
 			</div>
 		</header>
-	<!-- Modal -->
-		<div id="simpleModal" class="modal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<span id="closeBtn">&times;</span>	
-					<h5>Login Form</h5>
-				</div>
-				<div class="modal-body">
-					<form action="functions.php" method="post">
-						<center><label for="">Username:</label>
-						<input type="text" required name="username" placeholder="Enter Username...">
-						<br>
-						<label for="">Password:</label>
-						<input type="password" required name="password" placeholder="Enter Password...">
-						<br>
-						<label for="">Remember Me?</label>
-						<input type="checkbox" name="remember">
-						<br>
-						<input type="submit" class="modal-button" value="Login"></center>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<a href="register.php">Doesn't have an account?</a>
-				</div>
-			</div>
-		</div>
 	<!-- Sub Header -->
 		<div class="subheader">
 			<div class="subgrid">
@@ -118,5 +94,8 @@
 	<!-- End of Container -->
 	</div>
 	<script src="js/main.js"></script>
+	<script>
+		modal();
+	</script>
 </body>
 </html>

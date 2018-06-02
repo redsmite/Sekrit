@@ -1,5 +1,7 @@
 <?php
-	include'sidebar.php';
+	include'functions.php';
+	addSidebar();
+	addLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,32 +36,6 @@
 				</div>
 			</div>
 		</header>
-	<!-- Modal -->
-		<div id="simpleModal" class="modal">
-			<div class="modal-content">
-				<div class="modal-header">
-					<span id="closeBtn">&times;</span>	
-					<h5>Login Form</h5>
-				</div>
-				<div class="modal-body">
-					<form action="functions.php" method="post">
-						<center><label for="">Username:</label>
-						<input type="text" required name="username" placeholder="Enter Username...">
-						<br>
-						<label for="">Password:</label>
-						<input type="password" required name="password" placeholder="Enter Password...">
-						<br>
-						<label for="">Remember Me?</label>
-						<input type="checkbox" name="remember">
-						<br>
-						<input type="submit" class="modal-button" value="Login"></center>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<h5>Login Form</h5>
-				</div>
-			</div>
-		</div>
 	<!-- Sub Header -->
 		<div class="subheader">
 			<div class="subgrid">
@@ -137,6 +113,7 @@
 										<button type="submit" name="contact-button" id="contact-button">Submit</button>
 									</div>
 								</div>
+								<div id="process-message"></div>
 								<div id="error-message"></div>								
 							</div>	
 						</form>
@@ -155,44 +132,9 @@
 	</div>
 	<script src="js/main.js"></script>
 	<script>
-		// Register AJAX
-		document.getElementById('reg-form').addEventListener('submit', postName);
-
-		function postName(e){
-			e.preventDefault();
-
-			var myRequest = new XMLHttpRequest();
-			var url = 'registerprocess.php';
-
-			//form data variables
-			var username = document.getElementById('reg-name').value;
-			var password = document.getElementById('reg-password').value;
-			var retype = document.getElementById('reg-retype').value;
-			var firstname = document.getElementById('reg-first').value;
-			var middlename = document.getElementById('reg-middle').value;
-			var lastname = document.getElementById('reg-last').value;
-			var birthday = document.getElementById('reg-birthday').value;
-			var email = document.getElementById('reg-email').value;
-			var phoneno = document.getElementById('reg-phone').value;
-			var address = document.getElementById('reg-address').value;
-
-			var formData = "username="+username+"&password="+password+"&retype="+retype+"&firstname="+firstname+"&middlename="+middlename+"&lastname="+lastname+"&birthday="+birthday+"&email="+email+"&phoneno="+phoneno+"&address="+address;
-			
-			myRequest.open('POST', url ,true);
-			myRequest.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-
-			myRequest.onload = function(){
-				var response= this.responseText;
-				
-				if(response=="success"){
-					window.location.href = 'thankyou.html';
-				} else {
-					document.getElementById('error-message').innerHTML=response;
-				}
-			}
-			myRequest.send(formData);
-		}
-		
+		modal();
+		ajaxRegister();
+		ajaxLogin();
 	</script>
 </body>
 </html>

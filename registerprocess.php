@@ -22,21 +22,29 @@ if(isset($_POST['username'])){
 		$sql="SELECT username FROM tbluser WHERE username='$username'";
 		if($res_u=mysqli_query($conn,$sql)){
 			if (mysqli_num_rows($res_u) == 0) {
+				$sql2="SELECT email FROM tbluser WHERE email='$email'";
+				$res_e =mysqli_query($conn,$sql2);
+				if(mysqli_num_rows($res_e) == 0){
+					
+					$sql3="INSERT INTO tbluser(username,password,firstname,middlename,lastname,birthday,datecreated,email,phoneno,address,usertypeid,access) VALUES('$username','$password','$firstname','$middlename','$lastname','$birthday','$timestamp','$email','$phoneno','$address','1','1')";
 
-				$sql2="INSERT INTO tbluser(username,password,firstname,middlename,lastname,birthday,datecreated,email,phoneno,address,usertypeid) VALUES('$username','$password','$firstname','$middlename','$lastname','$birthday','$timestamp','$email','$phoneno','$address','1')";
+					if(mysqli_query($conn,$sql3)){
+						echo 'success';
+					} else {
+							echo '<i class="fas fa-exclamation-triangle"></i>Sorry, we are having some problems.';
+					}
 
-				if(mysqli_query($conn,$sql2)){
-					echo 'success';
-				} else {
-						echo 'Error: '+mysqli_error($conn);
+				}else{
+					echo '<i class="fas fa-exclamation-triangle"></i>Email is already taken';
 				}
+			
 
 			}	else {
-				echo '<i class="fas fa-exclamation-triangle"></i>Username is not unique';
+				echo '<i class="fas fa-exclamation-triangle"></i>Username is already taken';
 			}
 
 		} else {
-				echo 'Error: '+mysqli_error($conn);
+				echo '<i class="fas fa-exclamation-triangle"></i>Sorry, we are having some problems.';
 		}
 
 	} else {
